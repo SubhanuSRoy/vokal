@@ -1,9 +1,9 @@
 .container{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     align-items:center;
-    height: auto;
+    height: auto; */
 }
 .camCanvas{
     /* width:25rem; */

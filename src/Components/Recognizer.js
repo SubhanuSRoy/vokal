@@ -117,16 +117,16 @@ function Recognizer() {
         const GE = new fp.GestureEstimator([
           fp.Gestures.VictoryGesture,
           fp.Gestures.ThumbsUpGesture,
-          // loveYouGesture,
-          // thumbsDownGesture,
+          loveYouGesture,
+          thumbsDownGesture,
           helloGesture,
-          // indexRightGesture,
-          // indexLeftGesture,
-          // indexUpGesture,
-          // indexDownGesture,
+          indexRightGesture,
+          indexLeftGesture,
+          indexUpGesture,
+          indexDownGesture,
           byeGesture,
-          // callGesture,
-          // excellentGesture,
+          callGesture,
+          excellentGesture,
         ]);
         const gesture = await GE.estimate(hand[0].landmarks, 4);
         console.log(gesture);
@@ -194,75 +194,65 @@ function Recognizer() {
 
   return (
     <div className={styles.container}>
+      <Webcam
+        ref={webcamRef}
+        style={{
+          position: "absolute",
+          marginLeft: "auto",
+          marginRight: "auto",
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          zindex: 9,
+          width: 640,
+          height: 480,
+        }}
+      />
+
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: "absolute",
+          marginLeft: "auto",
+          marginRight: "auto",
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          zindex: 9,
+          width: 640,
+          height: 480,
+        }}
+      />
+
       {emoji !== null ? (
         <img
           src={images[emoji]}
-          className={styles.img}
-          // style={{
-          //   position: "absolute",
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          //   left: 0,
-          //   bottom: -600,
-          //   right: 400,
-          //   textAlign: "center",
-          //   height: 100,
-          // }}
+          style={{
+            position: "absolute",
+            marginLeft: "auto",
+            marginRight: "auto",
+            left: 0,
+            bottom: 200,
+            right: 400,
+            textAlign: "center",
+            height: 100,
+          }}
         />
       ) : (
         ""
       )}
-      <div className={styles.camCanvas}>
-        <Webcam
-          ref={webcamRef}
-          className={styles.webcam}
-          // style={{
-          //   position: "relative",
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          //   left: 0,
-          //   right: 0,
-          //   textAlign: "center",
-          //   zindex: 9,
-          //   // width: 500,
-          //   // height: 300,
-          // }}
-          // width="500"
-          // height="300"
-        />
-
-        <canvas
-          ref={canvasRef}
-          className={styles.canvas}
-          // style={{
-          //   position: "relative",
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          //   left: 0,
-          //   right: 0,
-          //   textAlign: "center",
-          //   zindex: 9,
-          //   // width: 500,
-          //   // height: 300,
-          // }}
-          // width="500"
-          // height="300"
-        />
-      </div>
-
       <div
-        className={styles.custom}
-        // style={{
-        //   position: "absolute",
-        //   marginLeft: "auto",
-        //   marginRight: "auto",
-        //   left: 200,
-        //   bottom: -500,
-        //   right: 0,
-        //   textAlign: "center",
-        //   height: 100,
-        //   color: "black",
-        // }}
+        style={{
+          position: "absolute",
+          marginLeft: "auto",
+          marginRight: "auto",
+          left: 200,
+          bottom: 400,
+          right: 0,
+          textAlign: "center",
+          height: 100,
+          color: "black",
+        }}
       >
         Select gender:
         <input type="radio" id="male" name="gen" value="male" />
