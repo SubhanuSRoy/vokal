@@ -21,10 +21,9 @@ function App() {
       </div>
       <div className="bg2">
         {/* description */}
-        <Description/>
+        <Description />
+        <Recognizer />
       </div>
-
-      {/* <Recognizer /> */}
     </div>
   );
 }

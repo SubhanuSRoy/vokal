@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice</title>
+</head>
+
+<body>
+    Select gender:
+    <input type="radio" id="male" name="gen" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gen" value="female">
+    <label for="female">Female</label>
+    <!-- Select Voice: <select name="" id="voiceList"></select> -->
+    <br><br>
+    <input type="text" id="txtInput">
+    <br><br>
+    <button id="btnSpeak">Speak!</button>
+
+    <script>
+
+        var voiceList = document.querySelector("#voiceList");
+        var txtInput = document.querySelector("#txtInput");
+        var btnSpeak = document.querySelector("#btnSpeak");
+        var tts = window.speechSynthesis;
+        var voices = [];
+
+        // getVoices();
+        if (speechSynthesis !== undefined) {
+            speechSynthesis.onvoiceschanged = () => { voices = tts.getVoices(); };
+        }
+        btnSpeak.addEventListener('click', () => {
+
+            var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+            var ele = document.getElementsByName('gen');
+            if (ele[0].checked == true)
+                toSpeak.voice = voices[0];
+            else
+                toSpeak.voice = voices[20];
+
+            // }
+            // var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+            // voices.forEach((voice) => {
+            //     if (voice.name === selectedVoiceName) {
+            //         toSpeak.voice = voice;
+            //     }
+
+            // });
+            tts.speak(toSpeak);
+            // txtInput.value = '';
+        });
+        function getVoices() {
+            voices = tts.getVoices();
+            
+        }
+    </script>
+</body>
+
+</html>
