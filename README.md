@@ -8,14 +8,14 @@
 
 #### ⭐ What was our motivation?
 
->As technology advances, we often aim for newer and better approaches for solving problems leaving behind the orthodox methods. We now have technologies and API's that can work as a translator from one language to another, Example Google Translator is an awesome solution to the language barrier thing and we can use it very easily to communicate with some person who even does not understand our language but we felt that there was no such proper service or website available that works as a translator for the MUTE i.e. a service that understands the sign language and converts it into user understandable form. So here was our motivation to build this project - **VOKAL- Giving voice to the muted**.
+>As technology advances, we often aim for newer and better approaches for solving problems leaving behind the orthodox methods. We now have technologies and API's that can work superbly as a translator from one language to another. For instance: Google Translator provides an awesome solution to the language barrier and we can use it very easily to communicate with some person with absolutely no knowledge about their language. But a speech-disabled person doesn't get a lot of benifits in this regard with the technologies available. There are no such proper service or website available that works as a translator for the MUTE i.e. a service that understands the sign language and converts it into user understandable form. So here was our motivation to build this project - **VOKAL- Giving voice to the muted**.
 
 #### ⭐ Details of our Project
 
 - We built this project to remove the language barrier between any person who is mute and a normal person who does not understand sign langauge so well.
 - Our project is built on **Hand Pose Detection using Machine Learning**.
 - Using this website any person who is MUTE can speek using sign language.
-- Our project uses Hand pose detection and responds accordingly.
+- Our project uses Hand pose detection and responds with text accordingly.Further the website speaks the sign langauge predicted. Thus solving the problem.
 
 
 ## Structure of the Repository 📂
@@ -34,14 +34,9 @@ root
     * `src`: This folder contains files required for adding design and functionality to website.
     * `package.json`: This files includes the dependencies requied for the website.
     
-    
-## A Glimpse of The Website 😎
-  
-## Youtube Video Link 📽️-: 
 
-<a href=""> Click Me</a>
 
-## Special Thanks to these People💝
+## Our Team💝
 
 <a href="https://github.com/eshan1925/Eventour/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=eshan1925/Eventour" />
