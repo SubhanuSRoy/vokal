@@ -1,30 +1,18 @@
 import React from "react";
 
-import "./App.css";
-
+// import "./App.css";
+import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom";
 import Recognizer from "./Components/Recognizer";
-import logo from "./Assets/vokal.png";
-import HeroSection from "./Components/HeroSection/HeroSection";
-import Description from "./Components/Description/Description";
+import MainScreen from "./Components/MainScreen/MainScreen";
 
 function App() {
   return (
-    <div className="app">
-      <div className="bg1">
-        <header className="header">
-          {/* logo */}
-          <img src={logo} alt="vokal logo" />
-        </header>
-
-        {/* illustration and main text */}
-        <HeroSection />
-      </div>
-      <div className="bg2">
-        {/* description */}
-        <Description />
-        <Recognizer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<MainScreen />} />
+        <Route exact path="/vokal" element={<Recognizer />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -125,7 +125,7 @@ function Recognizer() {
           indexUpGesture,
           indexDownGesture,
           byeGesture,
-          callGesture,
+          // callGesture,
           excellentGesture,
         ]);
         const gesture = await GE.estimate(hand[0].landmarks, 4);
