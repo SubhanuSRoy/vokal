@@ -3,6 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice</title>
+</head>
+
+<body>
+    Select gender:
+    <input type="radio" id="male" name="gen" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gen" value="female">
+    <label for="female">Female</label>
+    <br><br>
+    <input type="text" id="txtInput">
+    <br><br>
+    <button id="btnSpeak">Speak!</button>
+
+    <script>
+
+        var voiceList = document.querySelector("#voiceList");
+        var txtInput = document.querySelector("#txtInput");
+        var btnSpeak = document.querySelector("#btnSpeak");
+        var tts = window.speechSynthesis;
+        var voices = [];
+        // if (speechSynthesis !== undefined) {
+        //     speechSynthesis.onvoiceschanged = () => {
+        //         voices = tts.getVoices();
+        //         console.log(voices);
+        //     };
+        // }
+        btnSpeak.addEventListener('click', () => {
+
+            console.log(voices);
+            var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+            var ele = document.getElementsByName('gen');
+            if (ele[0].checked == true)
+                toSpeak.voice = tts.getVoices()[1];
+            else {
+                toSpeak.voice = tts.getVoices()[12];
+                console.log(voices);
+            }
+            tts.speak(toSpeak);
+            txtInput.value = '';
+        });
+    </script>
+</body>
+
+<!-- </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -55,4 +107,4 @@
     </script>
 </body>
 
-</html>
+</html> -->
