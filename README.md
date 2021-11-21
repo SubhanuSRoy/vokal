@@ -12,10 +12,10 @@
 
 #### ⭐ Details of our Project
 
-> We built this project to remove the language barrier between any person who is mute and a normal person who does not understand sign langauge so well.
-> Our project is built on **Hand Pose Detection using Machine Learning**.
-> Using this website any person who is MUTE can speek using sign language.
-> Our project uses Hand pose detection and responds accordingly.
+- We built this project to remove the language barrier between any person who is mute and a normal person who does not understand sign langauge so well.
+- Our project is built on **Hand Pose Detection using Machine Learning**.
+- Using this website any person who is MUTE can speek using sign language.
+- Our project uses Hand pose detection and responds accordingly.
 
 
 ## Structure of the Repository 📂
