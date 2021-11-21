@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./hero.module.css";
 import illus from "../../Assets/main_illus.png";
+import {Link} from "react-router-dom"
 
 function HeroSection() {
   return (
@@ -13,7 +14,7 @@ function HeroSection() {
         <h1>
           to the <strong>silenced</strong>
         </h1>
-        <button className={styles.btn}>Try Vokal</button>
+        <Link to="/vokal" className={styles.btn}>Try Vokal</Link>
       </div>
     </div>
   );
