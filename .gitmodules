@@ -1,0 +1,3 @@
+[submodule "vokal"]
+	path = vokal
+	url = https://github.com/SubhanuSRoy/vokal.git
