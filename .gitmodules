@@ -1,3 +1,6 @@
 [submodule "vokal"]
 	path = vokal
 	url = https://github.com/SubhanuSRoy/vokal.git
+[submodule "Vocal_text_to_speech-FlutterApp"]
+	path = Vocal_text_to_speech-FlutterApp
+	url = https://github.com/eshan1925/Vocal_text_to_speech-FlutterApp
