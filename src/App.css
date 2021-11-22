@@ -16,13 +16,15 @@
   /* float:right; */
 }
 .bg1{
-  /* background-image:url(./Assets/bg1.png); */
+  background-image:url(./Assets/bg2.png);
   background-repeat:no-repeat;
   background-size: cover;
   background-position:center;
   /* opacity: 0.5; */
   width:100%;
 }
+
+
 .btn {
   box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #ffffff 5%, #c9c9c9 100%);

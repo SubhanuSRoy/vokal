@@ -19,7 +19,7 @@ function MainScreen() {
         {/* illustration and main text */}
         <HeroSection />
       </div>
-      <div className="bg2">
+      <div className="bg1">
         {/* description */}
         <Description />
         <Flowchart/>

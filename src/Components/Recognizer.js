@@ -33,6 +33,9 @@ import { byeGesture } from "../Gestures/Fist";
 import { callGesture } from "../Gestures/Call";
 import { excellentGesture } from "../Gestures/Excellent";
 
+import  male  from "../Assets/male.png";
+import female  from "../Assets/female.png";
+
 function Recognizer() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -213,9 +216,9 @@ function Recognizer() {
             position: "absolute",
             // marginLeft: "auto",
             // marginRight: "auto",
-            left: 0,
+            left: 20,
             // bottom: 200,
-            top: 0,
+            top: 20,
             right: 400,
             textAlign: "center",
             height: 100,
@@ -231,18 +234,24 @@ function Recognizer() {
           marginLeft: "auto",
           marginRight: "auto",
           // left: 200,
-          bottom: 400,
-          right: 0,
+          bottom: 100,
+          right: 20,
           textAlign: "center",
-          height: 100,
+          // height: 00,
           color: "black",
         }}
       >
-        Select gender:
-        <input type="radio" id="male" name="gen" value="male" />
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gen" value="female" />
-        <label for="female">Female</label>
+        <p>Select gender:</p>
+        <div className={styles.options}>
+          <input type="radio" id="male" name="gen" value="male" />
+          <label for="male">
+            <img src={male} alt="male" className={styles.gender}/>
+          </label>
+          <input type="radio" id="female" name="gen" value="female" />
+          <label for="female">
+            <img src={female} alt="female" className={styles.gender}/>
+          </label>
+        </div>
         <button
           id="btnSpeak"
           // style={{
@@ -257,7 +266,7 @@ function Recognizer() {
           // }}
           onClick={() => Text2Speech(vText)}
         >
-          Speak!
+          Get your voice!
         </button>
       </div>
     </div>
