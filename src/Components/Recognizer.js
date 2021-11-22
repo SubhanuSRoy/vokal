@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-///////// NEW STUFF ADDED USE STATE
 
 // import logo from './logo.svg';
 import * as tf from "@tensorflow/tfjs";
@@ -8,7 +7,6 @@ import Webcam from "react-webcam";
 import { drawHand } from "../utilities";
 import styles from "./recognizer.module.css";
 
-///////// NEW STUFF IMPORTS
 import * as fp from "fingerpose";
 import thanks from "../Text/thanks.png";
 import yes from "../Text/yes.png";
@@ -22,8 +20,6 @@ import good_evening from "../Text/good_evening.png";
 import bye from "../Text/bye.png";
 import call_you_later from "../Text/call_you_later.png";
 import excellent from "../Text/excellent.png";
-
-///////// NEW STUFF IMPORTS
 
 //importing the new gestures
 import { loveYouGesture } from "../Gestures/LoveYou";
@@ -77,18 +73,16 @@ function Recognizer() {
     excellent: "Excellent!",
   };
 
-  //loading the handpose model
   const runHandpose = async () => {
     const net = await handpose.load();
     console.log("Handpose model loaded.");
-    //  Loop and detect hands (to see if ther is a hand wihtin our frame)
+
     setInterval(() => {
       detect(net);
     }, 10);
   };
 
   const detect = async (net) => {
-    // Check data is available
     if (
       typeof webcamRef.current !== "undefined" &&
       webcamRef.current !== null &&
@@ -110,8 +104,6 @@ function Recognizer() {
       // Make Detections
       const hand = await net.estimateHands(video);
       // console.log(hand);
-
-      ///////// NEW STUFF ADDED GESTURE HANDLING
 
       if (hand.length > 0) {
         const GE = new fp.GestureEstimator([
@@ -141,7 +133,6 @@ function Recognizer() {
           );
 
           // it has made the prediction
-          // console.log(gesture.gestures[maxConfidence].name);
           setEmoji(gesture.gestures[maxConfidence].name);
 
           //upadting the prediction value in vText
@@ -159,10 +150,6 @@ function Recognizer() {
   var tts = window.speechSynthesis;
   // var voices = [];
   const Text2Speech = (vText) => {
-    // var voiceList = document.querySelector("#voiceList");
-    // var txtInput = document.querySelector("#txtInput");
-    // var btnSpeak = document.querySelector("#btnSpeak");
-
     // console.log(voices)
     var toSpeak = new SpeechSynthesisUtterance(voiceText[vText]);
     console.log(toSpeak);
@@ -177,50 +164,45 @@ function Recognizer() {
       // console.log(voices)
     }
     tts.speak(toSpeak);
-    // txtInput.value = '';
   };
 
   useEffect(() => {
-    // if (speechSynthesis !== undefined) {
-    //   speechSynthesis.onvoiceschanged = () => {
-    //     setVoices(tts.getVoices());
-    //     console.log(voices)
-    //   };
-    // }
-    // setVoices(tts.getVoices());
     runHandpose();
-    // Text2Speech();
   }, []);
 
   return (
     <div className={styles.container}>
       <Webcam
+        className={styles.webcam}
         ref={webcamRef}
         style={{
           position: "absolute",
           marginLeft: "auto",
           marginRight: "auto",
-          left: 0,
-          right: 0,
+          top: 20,
+          left: 20,
+          // right: 0,
           textAlign: "center",
           zindex: 9,
-          width: 640,
-          height: 480,
+          width: 704,
+          height: 528,
         }}
       />
 
       <canvas
+        className={styles.canvas}
         ref={canvasRef}
         style={{
           position: "absolute",
           marginLeft: "auto",
           marginRight: "auto",
-          left: 0,
-          right: 0,
+          top: 20,
+          left: 20,
+          // right: 0,
           textAlign: "center",
           zindex: 9,
-          width: 640,
-          height: 480,
+          width: 704,
+          height: 528,
         }}
       />
 
@@ -229,10 +211,11 @@ function Recognizer() {
           src={images[emoji]}
           style={{
             position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
+            // marginLeft: "auto",
+            // marginRight: "auto",
             left: 0,
-            bottom: 200,
+            // bottom: 200,
+            top: 0,
             right: 400,
             textAlign: "center",
             height: 100,
@@ -242,11 +225,12 @@ function Recognizer() {
         ""
       )}
       <div
+        className={styles.custom}
         style={{
           position: "absolute",
           marginLeft: "auto",
           marginRight: "auto",
-          left: 200,
+          // left: 200,
           bottom: 400,
           right: 0,
           textAlign: "center",
