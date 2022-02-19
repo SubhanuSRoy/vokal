@@ -78,7 +78,7 @@ function Recognizer() {
 
   const runHandpose = async () => {
     const net = await handpose.load();
-    console.log("Handpose model loaded.");
+    // console.log("Handpose model loaded.");
 
     setInterval(() => {
       detect(net);
@@ -124,7 +124,7 @@ function Recognizer() {
           excellentGesture,
         ]);
         const gesture = await GE.estimate(hand[0].landmarks, 4);
-        console.log(gesture);
+        // console.log(gesture);
         if (gesture.gestures !== undefined && gesture.gestures.length > 0) {
           // console.log(gesture.gestures);
 
@@ -155,7 +155,7 @@ function Recognizer() {
   const Text2Speech = (vText) => {
     // console.log(voices)
     var toSpeak = new SpeechSynthesisUtterance(voiceText[vText]);
-    console.log(toSpeak);
+    // console.log(toSpeak);
     var ele = document.getElementsByName("gen");
     var v = [];
     v = tts.getVoices();
@@ -163,7 +163,7 @@ function Recognizer() {
       toSpeak.voice = v[1];
     } else {
       toSpeak.voice = v[12];
-      console.log("female chosen");
+      // console.log("female chosen");
       // console.log(voices)
     }
     tts.speak(toSpeak);
@@ -230,12 +230,12 @@ function Recognizer() {
       <div
         className={styles.custom}
         style={{
-          position: "absolute",
-          marginLeft: "auto",
-          marginRight: "auto",
+          // position: "absolute",
+          // marginLeft: "auto",
+          // marginRight: "auto",
           // left: 200,
-          bottom: 100,
-          right: 20,
+          // bottom: 100,
+          // right: 20,
           textAlign: "center",
           // height: 00,
           color: "black",
