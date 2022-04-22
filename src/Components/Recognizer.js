@@ -33,8 +33,8 @@ import { byeGesture } from "../Gestures/Fist";
 import { callGesture } from "../Gestures/Call";
 import { excellentGesture } from "../Gestures/Excellent";
 
-import  male  from "../Assets/male.png";
-import female  from "../Assets/female.png";
+import male from "../Assets/male.png";
+import female from "../Assets/female.png";
 
 function Recognizer() {
   const webcamRef = useRef(null);
@@ -245,11 +245,11 @@ function Recognizer() {
         <div className={styles.options}>
           <input type="radio" id="male" name="gen" value="male" />
           <label for="male">
-            <img src={male} alt="male" className={styles.gender}/>
+            <img src={male} alt="male" className={styles.gender} />
           </label>
           <input type="radio" id="female" name="gen" value="female" />
           <label for="female">
-            <img src={female} alt="female" className={styles.gender}/>
+            <img src={female} alt="female" className={styles.gender} />
           </label>
         </div>
         <button
